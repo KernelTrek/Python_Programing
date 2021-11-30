@@ -1,18 +1,15 @@
+# logging 핸들러를 사용하면, 별도로 파일에 기록할 수 있다. 
+# https://docs.python.org/ko/3.7/library/logging.handlers.html
+
 import logging
+import logtest
 
 logging.basicConfig(level=logging.INFO)
 
-logging.info('info')
-
-"""
-    Logger 를 사용하는 이유
-    메인 함수에서 log 레벨을 설정해두고, 
-    다른 곳에서 임시로 레벨을 변경하여 보여줄수 있기 때문에 사용함.  
-    
-"""
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-logger.debug('debug')
+logger.info('from main')
+
+logtest.do_something()
 
 
 # #test
